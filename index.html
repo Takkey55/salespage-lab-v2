@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>無料セールスページ・ファネル診断 | 72時間・外科手術パッケージ</title>
-    <meta name="description" content="LP・有料note・クラファンのセールスページの離脱要因を30秒でAIスコア化。FV訴求力・離脱リスク・推定改善伸びしろを可視化。">
+    <title>Funnel Architect Advisory ｜ セールス構造・離脱摩擦 AI監査エンジン（Funnel Friction Audit）</title>
+    <meta name="description" content="成約しない原因は商品力ではない。顧客の購買心理を阻害する『構造摩擦』にある。LP・クラファン・note等の販売ページテキストから致命的欠陥と成約率の伸びしろを即座に客観監査。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -42,7 +42,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
         header {
             background: #ffffff;
             border-bottom: 1px solid var(--border);
@@ -64,28 +63,25 @@
             color: var(--navy-dark);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
+            letter-spacing: -0.01em;
         }
         .logo span {
-            background: var(--primary);
-            color: white;
+            background: var(--navy-dark);
+            color: #ffffff;
             font-size: 0.75rem;
-            padding: 2px 8px;
+            padding: 3px 8px;
             border-radius: 4px;
             font-weight: 700;
-        }
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 16px;
+            letter-spacing: 0.05em;
         }
         .btn-header {
             display: inline-flex;
             align-items: center;
             padding: 8px 16px;
             font-size: 0.875rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary);
             background: var(--primary-light);
             border-radius: 6px;
@@ -96,7 +92,6 @@
             background: #d8e8f8;
         }
 
-        /* Hero */
         .hero {
             background: #ffffff;
             border-bottom: 1px solid var(--border);
@@ -118,9 +113,10 @@
             padding: 6px 14px;
             border-radius: 9999px;
             margin-bottom: 20px;
+            letter-spacing: 0.02em;
         }
         .hero h1 {
-            font-size: 2.25rem;
+            font-size: 2.3rem;
             font-weight: 800;
             color: var(--navy-dark);
             line-height: 1.35;
@@ -130,11 +126,11 @@
         .hero p {
             font-size: 1.05rem;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto 28px;
+            line-height: 1.7;
         }
 
-        /* Coverage Pills */
         .coverage-pills {
             display: flex;
             justify-content: center;
@@ -145,21 +141,19 @@
         .pill {
             background: var(--bg-body);
             border: 1px solid var(--border);
-            color: var(--text-main);
+            color: var(--navy-dark);
             font-size: 0.8125rem;
             font-weight: 600;
             padding: 6px 14px;
             border-radius: 9999px;
         }
 
-        /* Main Container */
         .container {
             max-width: 860px;
             margin: -24px auto 80px;
             padding: 0 24px;
         }
 
-        /* Card Form */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -186,6 +180,7 @@
             font-size: 0.8125rem;
             color: var(--text-muted);
             margin-top: 6px;
+            line-height: 1.5;
         }
         .form-control {
             width: 100%;
@@ -204,7 +199,7 @@
             box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
         }
         textarea.form-control {
-            min-height: 130px;
+            min-height: 140px;
             resize: vertical;
         }
         .form-row {
@@ -231,23 +226,22 @@
             gap: 10px;
             width: 100%;
             padding: 16px 24px;
-            background: var(--primary);
+            background: var(--navy-dark);
             color: white;
             font-size: 1.05rem;
             font-weight: 700;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
             transition: all 0.2s ease;
         }
         .btn-submit:hover {
-            background: var(--primary-hover);
+            background: #1e293b;
             transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(0, 102, 204, 0.35);
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.35);
         }
 
-        /* Loading */
         #loadingBox {
             display: none;
             text-align: center;
@@ -266,7 +260,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Results */
         #resultBox {
             display: none;
             margin-top: 36px;
@@ -314,7 +307,6 @@
             color: var(--text-muted);
         }
 
-        /* Diagnosis Insights */
         .insight-section {
             background: #ffffff;
             border: 1px solid var(--border);
@@ -335,7 +327,7 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            padding: 12px 0;
+            padding: 14px 0;
             border-bottom: 1px solid var(--border);
         }
         .insight-item:last-child {
@@ -352,20 +344,18 @@
         }
         .tag-danger { background: #fee2e2; color: #991b1b; }
         .tag-warning { background: #fef3c7; color: #92400e; }
-        .tag-info { background: #e0f2fe; color: #075985; }
         .insight-body strong {
             display: block;
             font-size: 0.9375rem;
             color: var(--navy-dark);
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
         .insight-body p {
             font-size: 0.875rem;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
-        /* Conversion CTA Box */
         .cta-box {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             border-radius: 16px;
@@ -393,6 +383,7 @@
             padding: 4px 12px;
             border-radius: 9999px;
             margin-bottom: 14px;
+            letter-spacing: 0.05em;
         }
         .cta-box h3 {
             font-size: 1.45rem;
@@ -404,7 +395,7 @@
         .cta-box p {
             font-size: 0.9375rem;
             color: #94a3b8;
-            max-width: 580px;
+            max-width: 600px;
             margin: 0 auto 24px;
             line-height: 1.6;
         }
@@ -434,25 +425,30 @@
             margin-top: 14px;
         }
 
-        /* Footer */
         footer {
             background: #ffffff;
             border-top: 1px solid var(--border);
-            padding: 32px 24px;
+            padding: 36px 24px;
             text-align: center;
             font-size: 0.8125rem;
             color: var(--text-muted);
+        }
+        .footer-brand {
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 6px;
+            font-size: 0.9375rem;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <a href="index.html" class="logo">
-                SalesPage Lab <span>V2</span>
+            <a href="/" class="logo">
+                Funnel Architect Advisory <span>OFFICIAL</span>
             </a>
             <div class="header-nav">
-                <a href="sales.html" class="btn-header">外科手術パッケージ詳細</a>
+                <a href="/surgery" class="btn-header">緊急止血パッケージはこちら</a>
             </div>
         </div>
     </header>
@@ -461,166 +457,166 @@
         <div class="hero-inner">
             <div class="badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                成約率（CVR）改善・無料診断マイクロツール
+                Funnel Friction Audit ｜ 構造摩擦AI監査
             </div>
-            <h1>セールスページの「見えない離脱要因」を<br>30秒で精密スコア化</h1>
-            <p>通常のWeb LPだけでなく、有料noteの無料部分、クラウドファンディングの起案ページまで。広告費や労力を溶かしている「3大出血ポイント」を論理的に特定します。</p>
+            <h1>セールス構造・離脱摩擦 AI監査エンジン<br><span style="font-size:1.6rem; font-weight:700; color:var(--text-muted);">(Funnel Friction Audit)</span></h1>
+            <p>成約しない原因は、商品力ではない。顧客の購買心理を阻害する『構造摩擦（フリクション）』にある。<br>LP・クラウドファンディング・note等の販売ページテキストを入力するだけで、見込み客を取りこぼしている【致命的欠陥】と【成約率の伸びしろ】を即座に客観監査します。</p>
             <div class="coverage-pills">
-                <div class="pill">✓ 通常Web LP・EC</div>
-                <div class="pill">✓ 有料note / Brain無料エリア</div>
-                <div class="pill">✓ Makuake / CAMPFIRE</div>
-                <div class="pill">✓ B2Bサービス資料・問合せ導線</div>
+                <div class="pill">✓ 一般Web LP / EC単品通販</div>
+                <div class="pill">✓ 有料note / Brain 無料公開エリア</div>
+                <div class="pill">✓ クラウドファンディング（Makuake等）起案レター</div>
+                <div class="pill">✓ BtoBサービス資料・問合せ導線</div>
             </div>
         </div>
     </section>
 
     <main class="container">
         <div class="card">
-            <form id="diagForm" onsubmit="event.preventDefault(); runDiagnosis();">
+            <form id="auditForm" onsubmit="event.preventDefault(); runAudit();">
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label" for="pageType">対象ページの種類 <span>*</span></label>
+                        <label class="form-label" for="pageType">監査対象の種類 <span>*</span></label>
                         <select class="form-control" id="pageType">
                             <option value="lp">一般的なWeb LP / 単品通販・EC</option>
-                            <option value="note">note / Brain の導入部（無料公開エリア）</option>
-                            <option value="cf">クラウドファンディング（Makuake / CAMPFIRE等）</option>
-                            <option value="b2b">BtoBサービス資料請求・問い合わせページ</option>
+                            <option value="note">note / Brain の導入部（無料公開・オプトイン枠）</option>
+                            <option value="cf">クラウドファンディング本文（Makuake / CAMPFIRE等）</option>
+                            <option value="letter">オンライン販売レター / サービス案内ページ</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="pageUrl">ページURL（任意）</label>
+                        <label class="form-label" for="pageUrl">対象URL（任意）</label>
                         <input type="url" class="form-control" id="pageUrl" placeholder="https://example.com/page">
-                        <div class="form-hint">未公開の場合は空欄で問題ありません</div>
+                        <div class="form-hint">未公開ドラフトの場合は空欄で問題ありません</div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="pageText">ファーストビューの文面・キャッチコピー <span>*</span></label>
-                    <textarea class="form-control" id="pageText" placeholder="例：
-【誰に】：毎月のインプ稼ぎや単発ローンチに疲弊している個人事業主へ
-【キャッチ】：小手先の集客テクニックを捨てろ。顧客が勝手に循環する『事業生態系』の作り方。
-【オファー】：無料オンライン勉強会 開催中"></textarea>
-                    <div class="form-hint">スマホ画面を開いた瞬間に目に入る「メイン見出し」「サブ見出し」「CTAボタン」を貼り付けてください</div>
+                    <label class="form-label" for="auditText">販売文章・ファーストビューのテキスト <span>*</span></label>
+                    <textarea class="form-control" id="auditText" placeholder="例：
+【対象読者】：毎月の集客や単発ローンチで疲弊している個人事業主
+【メインコピー】：小手先の集客テクニックを捨てろ。顧客が自走・循環する『事業生態系』の作り方。
+【サブコピー】：12年の実務知見を投じ、穴の空いたセールス導線を72時間で外科手術。
+【オファー】：完全非同期・テキスト完結パック受付中"></textarea>
+                    <div class="form-hint">※LP、クラファン本文、note有料販売枠、販売レターのテキストを入力してください。ファーストビューのコピーや、メインのオファー部分を貼り付けるだけでも高精度に監査可能です。</div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label" for="targetUser">想定している読者・ターゲット層 <span>*</span></label>
-                        <input type="text" class="form-control" id="targetUser" placeholder="例：30〜40代の中小企業経営者、集客に悩む発信者">
+                        <label class="form-label" for="targetAudience">想定ターゲット層 <span>*</span></label>
+                        <input type="text" class="form-control" id="targetAudience" placeholder="例：中小企業経営者、D2C事業者、個人事業主">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="currentIssue">現在感じている最大の課題</label>
-                        <select class="form-control" id="currentIssue">
-                            <option value="fv">PV・インプはあるがすぐ離脱されている（直帰率高）</option>
-                            <option value="cvr">最後まで読まれているが購入・問合せに繋がらない</option>
-                            <option value="target">ターゲットに刺さっているか分からない（反応が薄い）</option>
-                            <option value="ad">広告費をかけているが獲得単価（CPA）が高騰している</option>
+                        <label class="form-label" for="painPoint">現在抱えている成約の課題</label>
+                        <select class="form-control" id="painPoint">
+                            <option value="bounce">アクセス・インプはあるが最初の数秒で離脱されている</option>
+                            <option value="cvr">読まれている形跡はあるが、最後の決済・申込ボタンが押されない</option>
+                            <option value="fit">競合との違いが伝わっておらず、価格競争に巻き込まれている</option>
+                            <option value="cpa">広告費をかけているが獲得単価（CPA）が高騰して出血している</option>
                         </select>
                     </div>
                 </div>
 
                 <button type="submit" class="btn-submit" id="submitBtn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                    30秒でセールスページを診断する（完全無料）
+                    構造摩擦 AI客観監査を実行する（30秒・無料）
                 </button>
             </form>
 
-            <!-- Loading Spinner -->
             <div id="loadingBox">
                 <div class="spinner"></div>
-                <h4 style="font-size: 1.1rem; color: var(--navy-dark); margin-bottom: 6px;">ファネル構造・離脱要因を解析中...</h4>
-                <p style="font-size: 0.875rem; color: var(--text-muted);">ファーストビューの訴求摩擦・スクロール耐性・オファーの納得度を照合しています</p>
+                <h4 style="font-size: 1.1rem; color: var(--navy-dark); margin-bottom: 6px;">成約の黄金骨格とのギャップを監査中...</h4>
+                <p style="font-size: 0.875rem; color: var(--text-muted);">ファーストビューのフック・心理摩擦・オファー承諾負荷・CTA導線を多角的に解析しています</p>
             </div>
 
-            <!-- Diagnosis Results -->
             <div id="resultBox">
                 <div style="text-align: center; margin-bottom: 28px;">
-                    <span class="badge" style="background:#fee2e2; color:#991b1b; margin-bottom: 8px;">診断結果レポート</span>
-                    <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--navy-dark);">特定された成約率（CVR）のボトルネック</h2>
+                    <span class="badge" style="background:#fee2e2; color:#991b1b; margin-bottom: 8px;">監査報告サマリー</span>
+                    <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--navy-dark);">特定された【構造欠陥】と【事業の伸びしろ】</h2>
                 </div>
 
                 <div class="score-cards">
                     <div class="score-card">
                         <div class="score-title">ファーストビュー訴求力</div>
                         <div class="score-value score-danger">41<span style="font-size: 1.1rem;"> / 100</span></div>
-                        <div class="score-desc">3秒以内に「自分ごと」化できていない危険性</div>
+                        <div class="score-desc">3秒以内に読者が「自分ごと」化できていない構造摩擦</div>
                     </div>
                     <div class="score-card">
-                        <div class="score-title">推定スクロール離脱率</div>
+                        <div class="score-title">推定スクロール離脱リスク</div>
                         <div class="score-value score-warning">76<span style="font-size: 1.1rem;">%</span></div>
-                        <div class="score-desc">最初の画面で4人中3人が離脱している摩擦</div>
+                        <div class="score-desc">初見読者の約4分の3がスクロール前に流出</div>
                     </div>
                     <div class="score-card">
-                        <div class="score-title">改善による成約伸びしろ</div>
+                        <div class="score-title">成約率（CVR）改善余地</div>
                         <div class="score-value score-success">+210<span style="font-size: 1.1rem;">%</span></div>
-                        <div class="score-desc">テキスト構造の外科手術で期待できるCVR向上</div>
+                        <div class="score-desc">構造の外科手術とテキスト縫合で狙える伸びしろ</div>
                     </div>
                 </div>
 
                 <div class="insight-section">
                     <h3>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                        緊急修復が必要な「3大出血ポイント」
+                        緊急止血が必要な「3大構造欠陥（フリクション）」
                     </h3>
 
                     <div class="insight-item">
-                        <span class="insight-tag tag-danger">重度</span>
+                        <span class="insight-tag tag-danger">致命的</span>
                         <div class="insight-body">
-                            <strong>1. ファーストビューの「痛みの解像度」不足（3秒ルールの摩擦）</strong>
-                            <p>商品やノウハウの「機能・特徴」が前面に出ており、読者が今抱えている切実な痛み・損している現実の言語化が遅れています。読者は最初の3秒で「自分とは無関係」と判断して画面を閉じています。</p>
+                            <strong>1. ファーストビューにおける「痛みの解像度」不足（3秒ルールの摩擦）</strong>
+                            <p>自社が伝えたい特徴や機能が先行し、読者が直面している「今すぐ解決したい現実の損害や痛み」の言語化が遅れています。読者は3秒以内に自分と関係のない広告とみなし、画面を離脱しています。</p>
                         </div>
                     </div>
 
                     <div class="insight-item">
-                        <span class="insight-tag tag-danger">重度</span>
+                        <span class="insight-tag tag-danger">致命的</span>
                         <div class="insight-body">
-                            <strong>2. スマホ閲覧時の視線摩擦（テキストの壁現象）</strong>
-                            <p>パソコン作成時のレイアウトのままスマホで見られているため、スクロールのリズムやタメ（空行・強調）がなく、読者の指が滑って読み飛ばされています。</p>
+                            <strong>2. 視線摩擦によるスクロール離脱（テキストの壁現象）</strong>
+                            <p>スマホ閲覧時の視線誘導（タメ・空行・フック）が欠落しており、一息で読めない圧迫感が生じています。読者の指を自然に下部へ滑らせるリズムの再設計が必要です。</p>
                         </div>
                     </div>
 
                     <div class="insight-item">
-                        <span class="insight-tag tag-warning">中度</span>
+                        <span class="insight-tag tag-warning">要注意</span>
                         <div class="insight-body">
-                            <strong>3. オファーへの着地動線（マイクロCV）の欠如</strong>
-                            <p>いきなり「購入する」「申し込む」「支援する」という重い決断を迫っているため、離脱が起きています。購入の手前にある「読む理由・手に入れるべき必然性」の心理ステップを1枚挟む必要があります。</p>
+                            <strong>3. 決済・申込ボタン直前の「オファー承諾摩擦」</strong>
+                            <p>購入や支援の手前にある心理的ハードル（価格の妥当性、解約や失敗のリスク、決断の必然性）が無力化されないままCTAに直面しているため、最後の1クリックで離脱されています。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Call to action for 98k pack -->
                 <div class="cta-box">
-                    <span class="cta-badge">72時間・完全テキスト完結</span>
-                    <h3>この離脱要因を、プロの設計図と完成原稿で<br>72時間以内に外科手術しませんか？</h3>
-                    <p>デザインを何百万円もかけて作り直す必要はありません。<br>読者が思わず立ち止まり、財布を開く「言葉の配置と導線」だけを外科手術します。</p>
-                    <a href="sales.html" class="btn-cta">
-                        「72時間・外科手術パッケージ」の詳細を見る
+                    <span class="cta-badge">緊急止血枠 ｜ 完全非同期・72時間完了納品</span>
+                    <h3>監査で特定された構造欠陥を、<br>Zoom面談一切なし・72時間以内に直接縫合しませんか？</h3>
+                    <p>デザインを何百万円もかけて作り直す必要はありません。<br>見込み客が逃げ出している「構造の穴」を塞ぎ、広告費とアクセスを売上に変える外科手術を一括納品します。</p>
+                    <a href="/surgery" class="btn-cta">
+                        【緊急止血枠】72時間 外科手術パッケージの詳細を見る
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                     </a>
-                    <div class="cta-sub">※Zoom面談一切なし・定価98,000円（税込）・先着月3枠限定</div>
+                    <div class="cta-sub">※Zoom面談・打ち合わせ一切不要 ｜ 定価98,000円（税込・買い切り） ｜ 月間先着3枠限定</div>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 SalesPage Lab. All rights reserved. | 事業生態系アーキテクチャ</p>
+        <div class="footer-brand">Funnel Architect Advisory</div>
+        <p>代表・事業参謀：香月 隆之（Kazuki Takayuki）</p>
+        <p style="margin-top: 6px;">&copy; 2026 Funnel Architect Advisory. All rights reserved.</p>
     </footer>
 
     <script>
-        function runDiagnosis() {
-            const text = document.getElementById('pageText').value.trim();
+        function runAudit() {
+            const text = document.getElementById('auditText').value.trim();
             if (!text) {
-                alert('ファーストビューの文面またはキャッチコピーを入力してください。');
+                alert('販売文章・ファーストビューのテキストを入力してください。');
                 return;
             }
 
-            document.getElementById('diagForm').style.display = 'none';
+            document.getElementById('auditForm').style.display = 'none';
             document.getElementById('loadingBox').style.display = 'block';
 
             setTimeout(() => {
                 document.getElementById('loadingBox').style.display = 'none';
-                document.getElementById('diagForm').style.display = 'block';
+                document.getElementById('auditForm').style.display = 'block';
                 document.getElementById('resultBox').style.display = 'block';
                 document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth' });
             }, 1200);

@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/surgery",
+      "destination": "/surgery.html"
+    }
+  ],
+  "cleanUrls": true
+}
