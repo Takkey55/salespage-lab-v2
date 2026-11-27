@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無料セールスページ・ファネル診断 | 72時間・外科手術パッケージ</title>
+    <meta name="description" content="LP・有料note・クラファンのセールスページの離脱要因を30秒でAIスコア化。FV訴求力・離脱リスク・推定改善伸びしろを可視化。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-hover: #0052a3;
+            --primary-light: #e6f0fa;
+            --navy-dark: #0f172a;
+            --navy-sub: #1e293b;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --danger: #ef4444;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .logo span {
+            background: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .btn-header {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-header:hover {
+            background: #d8e8f8;
+        }
+
+        /* Hero */
+        .hero {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 56px 24px 48px;
+            text-align: center;
+        }
+        .hero-inner {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            line-height: 1.35;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 28px;
+        }
+
+        /* Coverage Pills */
+        .coverage-pills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .pill {
+            background: var(--bg-body);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 9999px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 860px;
+            margin: -24px auto 80px;
+            padding: 0 24px;
+        }
+
+        /* Card Form */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-label {
+            display: block;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+        }
+        .form-label span {
+            color: var(--danger);
+            font-size: 0.8125rem;
+            margin-left: 4px;
+        }
+        .form-hint {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #ffffff;
+            color: var(--text-main);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+        }
+        textarea.form-control {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                padding: 24px 20px;
+            }
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+        }
+
+        .btn-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 24px;
+            background: var(--primary);
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+            transition: all 0.2s ease;
+        }
+        .btn-submit:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0, 102, 204, 0.35);
+        }
+
+        /* Loading */
+        #loadingBox {
+            display: none;
+            text-align: center;
+            padding: 48px 24px;
+        }
+        .spinner {
+            width: 44px;
+            height: 44px;
+            border: 4px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Results */
+        #resultBox {
+            display: none;
+            margin-top: 36px;
+            border-top: 2px dashed var(--border);
+            padding-top: 36px;
+        }
+        .score-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        @media (max-width: 640px) {
+            .score-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        .score-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .score-title {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .score-value {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .score-danger { color: var(--danger); }
+        .score-warning { color: var(--warning); }
+        .score-success { color: var(--primary); }
+        .score-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Diagnosis Insights */
+        .insight-section {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        .insight-section h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .insight-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .insight-tag {
+            font-size: 0.6875rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+        .tag-danger { background: #fee2e2; color: #991b1b; }
+        .tag-warning { background: #fef3c7; color: #92400e; }
+        .tag-info { background: #e0f2fe; color: #075985; }
+        .insight-body strong {
+            display: block;
+            font-size: 0.9375rem;
+            color: var(--navy-dark);
+            margin-bottom: 3px;
+        }
+        .insight-body p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Conversion CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 16px;
+            padding: 36px 32px;
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0066cc, #38bdf8);
+        }
+        .cta-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            color: #38bdf8;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            margin-bottom: 14px;
+        }
+        .cta-box h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+        .cta-box p {
+            font-size: 0.9375rem;
+            color: #94a3b8;
+            max-width: 580px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: #0066cc;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 102, 204, 0.4);
+            transition: all 0.2s ease;
+        }
+        .btn-cta:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.5);
+        }
+        .cta-sub {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                SalesPage Lab <span>V2</span>
+            </a>
+            <div class="header-nav">
+                <a href="sales.html" class="btn-header">外科手術パッケージ詳細</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                成約率（CVR）改善・無料診断マイクロツール
+            </div>
+            <h1>セールスページの「見えない離脱要因」を<br>30秒で精密スコア化</h1>
+            <p>通常のWeb LPだけでなく、有料noteの無料部分、クラウドファンディングの起案ページまで。広告費や労力を溶かしている「3大出血ポイント」を論理的に特定します。</p>
+            <div class="coverage-pills">
+                <div class="pill">✓ 通常Web LP・EC</div>
+                <div class="pill">✓ 有料note / Brain無料エリア</div>
+                <div class="pill">✓ Makuake / CAMPFIRE</div>
+                <div class="pill">✓ B2Bサービス資料・問合せ導線</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="card">
+            <form id="diagForm" onsubmit="event.preventDefault(); runDiagnosis();">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="pageType">対象ページの種類 <span>*</span></label>
+                        <select class="form-control" id="pageType">
+                            <option value="lp">一般的なWeb LP / 単品通販・EC</option>
+                            <option value="note">note / Brain の導入部（無料公開エリア）</option>
+                            <option value="cf">クラウドファンディング（Makuake / CAMPFIRE等）</option>
+                            <option value="b2b">BtoBサービス資料請求・問い合わせページ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="pageUrl">ページURL（任意）</label>
+                        <input type="url" class="form-control" id="pageUrl" placeholder="https://example.com/page">
+                        <div class="form-hint">未公開の場合は空欄で問題ありません</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="pageText">ファーストビューの文面・キャッチコピー <span>*</span></label>
+                    <textarea class="form-control" id="pageText" placeholder="例：
+【誰に】：毎月のインプ稼ぎや単発ローンチに疲弊している個人事業主へ
+【キャッチ】：小手先の集客テクニックを捨てろ。顧客が勝手に循環する『事業生態系』の作り方。
+【オファー】：無料オンライン勉強会 開催中"></textarea>
+                    <div class="form-hint">スマホ画面を開いた瞬間に目に入る「メイン見出し」「サブ見出し」「CTAボタン」を貼り付けてください</div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="targetUser">想定している読者・ターゲット層 <span>*</span></label>
+                        <input type="text" class="form-control" id="targetUser" placeholder="例：30〜40代の中小企業経営者、集客に悩む発信者">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="currentIssue">現在感じている最大の課題</label>
+                        <select class="form-control" id="currentIssue">
+                            <option value="fv">PV・インプはあるがすぐ離脱されている（直帰率高）</option>
+                            <option value="cvr">最後まで読まれているが購入・問合せに繋がらない</option>
+                            <option value="target">ターゲットに刺さっているか分からない（反応が薄い）</option>
+                            <option value="ad">広告費をかけているが獲得単価（CPA）が高騰している</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    30秒でセールスページを診断する（完全無料）
+                </button>
+            </form>
+
+            <!-- Loading Spinner -->
+            <div id="loadingBox">
+                <div class="spinner"></div>
+                <h4 style="font-size: 1.1rem; color: var(--navy-dark); margin-bottom: 6px;">ファネル構造・離脱要因を解析中...</h4>
+                <p style="font-size: 0.875rem; color: var(--text-muted);">ファーストビューの訴求摩擦・スクロール耐性・オファーの納得度を照合しています</p>
+            </div>
+
+            <!-- Diagnosis Results -->
+            <div id="resultBox">
+                <div style="text-align: center; margin-bottom: 28px;">
+                    <span class="badge" style="background:#fee2e2; color:#991b1b; margin-bottom: 8px;">診断結果レポート</span>
+                    <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--navy-dark);">特定された成約率（CVR）のボトルネック</h2>
+                </div>
+
+                <div class="score-cards">
+                    <div class="score-card">
+                        <div class="score-title">ファーストビュー訴求力</div>
+                        <div class="score-value score-danger">41<span style="font-size: 1.1rem;"> / 100</span></div>
+                        <div class="score-desc">3秒以内に「自分ごと」化できていない危険性</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-title">推定スクロール離脱率</div>
+                        <div class="score-value score-warning">76<span style="font-size: 1.1rem;">%</span></div>
+                        <div class="score-desc">最初の画面で4人中3人が離脱している摩擦</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-title">改善による成約伸びしろ</div>
+                        <div class="score-value score-success">+210<span style="font-size: 1.1rem;">%</span></div>
+                        <div class="score-desc">テキスト構造の外科手術で期待できるCVR向上</div>
+                    </div>
+                </div>
+
+                <div class="insight-section">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        緊急修復が必要な「3大出血ポイント」
+                    </h3>
+
+                    <div class="insight-item">
+                        <span class="insight-tag tag-danger">重度</span>
+                        <div class="insight-body">
+                            <strong>1. ファーストビューの「痛みの解像度」不足（3秒ルールの摩擦）</strong>
+                            <p>商品やノウハウの「機能・特徴」が前面に出ており、読者が今抱えている切実な痛み・損している現実の言語化が遅れています。読者は最初の3秒で「自分とは無関係」と判断して画面を閉じています。</p>
+                        </div>
+                    </div>
+
+                    <div class="insight-item">
+                        <span class="insight-tag tag-danger">重度</span>
+                        <div class="insight-body">
+                            <strong>2. スマホ閲覧時の視線摩擦（テキストの壁現象）</strong>
+                            <p>パソコン作成時のレイアウトのままスマホで見られているため、スクロールのリズムやタメ（空行・強調）がなく、読者の指が滑って読み飛ばされています。</p>
+                        </div>
+                    </div>
+
+                    <div class="insight-item">
+                        <span class="insight-tag tag-warning">中度</span>
+                        <div class="insight-body">
+                            <strong>3. オファーへの着地動線（マイクロCV）の欠如</strong>
+                            <p>いきなり「購入する」「申し込む」「支援する」という重い決断を迫っているため、離脱が起きています。購入の手前にある「読む理由・手に入れるべき必然性」の心理ステップを1枚挟む必要があります。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to action for 98k pack -->
+                <div class="cta-box">
+                    <span class="cta-badge">72時間・完全テキスト完結</span>
+                    <h3>この離脱要因を、プロの設計図と完成原稿で<br>72時間以内に外科手術しませんか？</h3>
+                    <p>デザインを何百万円もかけて作り直す必要はありません。<br>読者が思わず立ち止まり、財布を開く「言葉の配置と導線」だけを外科手術します。</p>
+                    <a href="sales.html" class="btn-cta">
+                        「72時間・外科手術パッケージ」の詳細を見る
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                    <div class="cta-sub">※Zoom面談一切なし・定価98,000円（税込）・先着月3枠限定</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SalesPage Lab. All rights reserved. | 事業生態系アーキテクチャ</p>
+    </footer>
+
+    <script>
+        function runDiagnosis() {
+            const text = document.getElementById('pageText').value.trim();
+            if (!text) {
+                alert('ファーストビューの文面またはキャッチコピーを入力してください。');
+                return;
+            }
+
+            document.getElementById('diagForm').style.display = 'none';
+            document.getElementById('loadingBox').style.display = 'block';
+
+            setTimeout(() => {
+                document.getElementById('loadingBox').style.display = 'none';
+                document.getElementById('diagForm').style.display = 'block';
+                document.getElementById('resultBox').style.display = 'block';
+                document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth' });
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
