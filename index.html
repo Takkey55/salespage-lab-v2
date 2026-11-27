@@ -490,14 +490,28 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label" for="auditText">販売文章・ファーストビューのテキスト <span>*</span></label>
-                    <textarea class="form-control" id="auditText" placeholder="例：
-【対象読者】：毎月の集客や単発ローンチで疲弊している個人事業主
-【メインコピー】：小手先の集客テクニックを捨てろ。顧客が自走・循環する『事業生態系』の作り方。
-【サブコピー】：12年の実務知見を投じ、穴の空いたセールス導線を72時間で外科手術。
-【オファー】：完全非同期・テキスト完結パック受付中"></textarea>
-                    <div class="form-hint">※LP、クラファン本文、note有料販売枠、販売レターのテキストを入力してください。ファーストビューのコピーや、メインのオファー部分を貼り付けるだけでも高精度に監査可能です。</div>
+                <!-- Multi-input mode: URL or Screenshot or Text -->
+                <div class="form-group" style="background: var(--bg-body); border: 1px dashed var(--border); border-radius: 12px; padding: 20px;">
+                    <label class="form-label" style="margin-bottom: 12px;">監査素材の入力方法（以下のいずれか1つでOK） <span>*</span></label>
+                    
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-size: 0.875rem; font-weight: 700; color: var(--navy-dark); display: block; margin-bottom: 6px;">① ページのURLを入力（自動巡回・視覚監査）</label>
+                        <input type="url" class="form-control" id="pageUrlInput" placeholder="https://your-domain.com/sales-page" style="background: #fff;">
+                        <div class="form-hint">※URLを入力するだけで、デザイン・画像文字・ファーストビュー全体の視覚摩擦を自動スキャンします。</div>
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-size: 0.875rem; font-weight: 700; color: var(--navy-dark); display: block; margin-bottom: 6px;">② または ファーストビューのスクリーンショット画像をアップロード</label>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <input type="file" id="pageImage" accept="image/*" class="form-control" style="background: #fff; padding: 8px 12px;">
+                        </div>
+                        <div class="form-hint">※スマホ画面のキャプチャを1枚貼るだけで、画像内の文字・デザインバランス・視線誘導をダイレクトに判定します。</div>
+                    </div>
+
+                    <div>
+                        <label style="font-size: 0.875rem; font-weight: 700; color: var(--navy-dark); display: block; margin-bottom: 6px;">③ または キャッチコピー等の文章を直接入力（任意・下書き用）</label>
+                        <textarea class="form-control" id="auditText" placeholder="未公開の下書きテキストがある場合のみ、こちらに貼り付けてください（空欄でも上記①②があれば監査可能です）。" style="min-height: 80px; background: #fff;"></textarea>
+                    </div>
                 </div>
 
                 <div class="form-row">
@@ -605,9 +619,12 @@
 
     <script>
         function runAudit() {
+            const url = document.getElementById('pageUrlInput').value.trim();
+            const file = document.getElementById('pageImage').files[0];
             const text = document.getElementById('auditText').value.trim();
-            if (!text) {
-                alert('販売文章・ファーストビューのテキストを入力してください。');
+
+            if (!url && !file && !text) {
+                alert('「①ページのURL」「②スクショ画像」「③テキスト」のいずれか1つを入力・選択してください。');
                 return;
             }
 

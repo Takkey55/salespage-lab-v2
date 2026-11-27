@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ファネル・セールス構造「緊急外科手術」集中改善パッケージ ｜ Funnel Architect Advisory</title>
+    <meta name="description" content="デザインを数百万円かけて作り直しても売上は増えません。見込み客が逃げ出している『構造の穴』を塞ぎ、広告費の出血を止める外科手術。Zoom面談一切なし・72時間完了納品。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-hover: #0052a3;
+            --primary-light: #e6f0fa;
+            --navy-dark: #0f172a;
+            --navy-sub: #1e293b;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --danger: #ef4444;
+            --success: #10b981;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.01em;
+        }
+        .logo span {
+            background: var(--navy-dark);
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 18px;
+            background: var(--navy-dark);
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .header-cta:hover {
+            background: #1e293b;
+        }
+
+        .hero {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            padding: 64px 24px 72px;
+            position: relative;
+        }
+        .hero-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fee2e2;
+            color: #991b1b;
+            font-size: 0.8125rem;
+            font-weight: 800;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+        .hero-title {
+            font-size: 2.35rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+        .hero-lead {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+        .hero-checks {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 36px;
+        }
+        @media (max-width: 900px) {
+            .hero-checks {
+                align-items: center;
+            }
+        }
+        .hero-checks li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy-dark);
+        }
+        .hero-checks li svg {
+            color: var(--success);
+            flex-shrink: 0;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .hero-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: var(--navy-dark);
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.35);
+            transition: all 0.2s ease;
+        }
+        .btn-main:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.45);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 24px;
+            background: #ffffff;
+            color: var(--navy-dark);
+            font-size: 0.9375rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background: var(--bg-body);
+            border-color: #cbd5e1;
+        }
+
+        .hero-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow-xl);
+        }
+        .hero-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .hero-card-title {
+            font-size: 0.875rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .badge-live {
+            background: #fee2e2;
+            color: #991b1b;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+        .deliverable-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .deliverable-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .deliverable-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.8125rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .deliverable-text h4 {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 2px;
+        }
+        .deliverable-text p {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .coverage-bar {
+            background: var(--navy-dark);
+            color: #ffffff;
+            padding: 24px;
+            text-align: center;
+        }
+        .coverage-bar-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 28px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .coverage-bar-inner span {
+            color: #38bdf8;
+            margin-right: 6px;
+        }
+
+        section {
+            padding: 80px 24px;
+        }
+        .section-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 56px;
+        }
+        .section-tag {
+            font-size: 0.8125rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            line-height: 1.35;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+        .section-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .deliverable-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 800px) {
+            .deliverable-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .detail-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 32px 28px;
+            box-shadow: var(--shadow-sm);
+        }
+        .detail-step {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+        }
+        .detail-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .detail-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 18px 24px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9375rem;
+        }
+        .comparison-table th {
+            background: #f1f5f9;
+            font-weight: 800;
+            color: var(--navy-dark);
+        }
+        .comparison-table th.col-highlight {
+            background: var(--navy-dark);
+            color: #ffffff;
+            font-weight: 800;
+        }
+        .comparison-table td.col-highlight {
+            background: rgba(15, 23, 42, 0.03);
+            font-weight: 700;
+            color: var(--navy-dark);
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-section {
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .pricing-card {
+            max-width: 640px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid var(--navy-dark);
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            position: relative;
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--danger);
+            color: #ffffff;
+            font-size: 0.8125rem;
+            font-weight: 800;
+            padding: 4px 18px;
+            border-radius: 9999px;
+            letter-spacing: 0.05em;
+        }
+        .pricing-price {
+            font-size: 3.25rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            line-height: 1;
+            margin: 20px 0 8px;
+        }
+        .pricing-tax {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin: 32px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy-dark);
+        }
+        .pricing-features li svg {
+            color: var(--success);
+            flex-shrink: 0;
+        }
+
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+        @media (max-width: 800px) {
+            .flow-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .flow-step {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        .flow-no {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .flow-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+        }
+        .flow-desc {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            padding: 48px 24px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        .footer-brand {
+            font-weight: 800;
+            color: var(--navy-dark);
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        .footer-meta {
+            font-size: 0.875rem;
+            color: var(--navy-dark);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">
+                Funnel Architect Advisory <span>OFFICIAL</span>
+            </a>
+            <a href="#orderSection" class="header-cta">
+                緊急止血枠を申し込む（月3枠）
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    Funnel Architect Advisory ｜ 緊急止血プロトコル
+                </div>
+                <h1 class="hero-title">
+                    ファネル・セールス構造<br>
+                    「緊急外科手術」集中改善パッケージ<br>
+                    <span style="font-size: 1.45rem; font-weight: 700; color: var(--primary);">【完全非同期（Zoom面談一切なし）・72時間完了納品】</span>
+                </h1>
+                <p class="hero-lead">
+                    デザインを数百万円かけて作り直しても、売上は1円も増えません。<br>
+                    今すぐ必要なのは、見込み客が逃げ出している『構造の穴』を塞ぎ、広告費の出血を止める外科手術です。<br><br>
+                    12年の実務知見を投じ、貴社セールスページ（LP・クラファン・販売導線）の致命的摩擦を72時間以内に特定。現場がそのまま実装できる修正原稿とワイヤーフレーム一式を、一切の打ち合わせ・Zoomなしのテキスト完結で納品します。
+                </p>
+                <ul class="hero-checks">
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>一般LP、有料note、クラファン（Makuake等）全対応</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>多忙な経営者・事業主の時間を1秒も奪わないテキスト完結</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>定価98,000円（税込・買い切りスポット契約）</li>
+                </ul>
+                <div class="hero-actions">
+                    <a href="#orderSection" class="btn-main">
+                        緊急外科手術を申し込む
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                    <a href="/" class="btn-secondary">
+                        無料監査エンジンを試す
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <span class="hero-card-title">72時間 納品設計図 4点セット</span>
+                    <span class="badge-live">即実装可能</span>
+                </div>
+                <ul class="deliverable-list">
+                    <li class="deliverable-item">
+                        <div class="deliverable-num">1</div>
+                        <div class="deliverable-text">
+                            <h4>ファネル構造 摩擦診断カルテ</h4>
+                            <p>なぜ離脱が起きているのか、顧客心理のブレーキを論理的に解剖した診断書（PDF/マークダウン）。</p>
+                        </div>
+                    </li>
+                    <li class="deliverable-item">
+                        <div class="deliverable-num">2</div>
+                        <div class="deliverable-text">
+                            <h4>FV離脱防止・成約構造ワイヤーフレーム ＆ 修正コピー</h4>
+                            <p>3秒で離脱を防ぎ、スクロールを強制するプロ仕様の骨格設計図。</p>
+                        </div>
+                    </li>
+                    <li class="deliverable-item">
+                        <div class="deliverable-num">3</div>
+                        <div class="deliverable-text">
+                            <h4>オファー摩擦除去・マイクロコピー設計書</h4>
+                            <p>決済・申込ボタン直前の不安（価格、定期縛り、解約ハードル）を無力化するテキスト指定。</p>
+                        </div>
+                    </li>
+                    <li class="deliverable-item">
+                        <div class="deliverable-num">4</div>
+                        <div class="deliverable-text">
+                            <h4>【任意】初速ステップ・追客設計原稿</h4>
+                            <p>離脱者を回収するためのLINE／メール初動ステップ配信案。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="coverage-bar">
+        <div class="coverage-bar-inner">
+            <div><span>対応領域 ①</span> 一般Web LP / EC単品通販</div>
+            <div><span>対応領域 ②</span> 有料note / Brain 無料エリア（オプトイン）</div>
+            <div><span>対応領域 ③</span> クラファン（Makuake / CAMPFIRE等）起案ページ</div>
+            <div><span>対応領域 ④</span> BtoB資料請求・問合せ導線</div>
+        </div>
+    </div>
+
+    <!-- Deliverables Detailed -->
+    <section>
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-tag">Deliverables</div>
+                <h2 class="section-title">納品される4つの構造設計図</h2>
+                <p class="section-desc">抽象的なアドバイスや感想文ではありません。現場がそのままコピペして実装できる完成原稿とワイヤーフレーム一式を納品します。</p>
+            </div>
+
+            <div class="deliverable-grid">
+                <div class="detail-card">
+                    <div class="detail-step">納品物 ①</div>
+                    <h3 class="detail-title">ファネル構造 摩擦診断カルテ（PDF / マークダウン）</h3>
+                    <p class="detail-desc">貴社ページ上で顧客が「怪しい」「面倒だ」「今じゃなくていい」と離脱したポイントを、購買心理学と12年の実務データに基づき論理的に解剖。出血要因を完全特定します。</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-step">納品物 ②</div>
+                    <h3 class="detail-title">FV離脱防止・成約構造ワイヤーフレーム ＆ 修正コピー</h3>
+                    <p class="detail-desc">3秒以内に「自分ごと」化させ、指のスクロールを強制するファーストビューの骨格設計。デザイナーやエンジニアへそのまま渡せるレイアウト指示書付きです。</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-step">納品物 ③</div>
+                    <h3 class="detail-title">オファー摩擦除去・マイクロコピー設計書</h3>
+                    <p class="detail-desc">「購入する」「申し込む」のボタン周辺に潜む顧客の最終抵抗（価格への躊躇、保証への不安、解約の面倒さ）を無力化し、成約率を跳ね上げる極短コピー群。</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-step">納品物 ④（任意付帯）</div>
+                    <h3 class="detail-title">初速ステップ・追客設計原稿</h3>
+                    <p class="detail-desc">初回訪問で離脱した読者を公式LINEやメールで確実に回収し、数日以内に熱量の高い顧客へ引き上げるための初動ステップ配信設計案。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Flow -->
+    <section style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-tag">Async Protocol</div>
+                <h2 class="section-title">完全非同期・商談ゼロの着手フロー</h2>
+                <p class="section-desc">多忙な経営者・事業主の時間を1秒も奪いません。打ち合わせの日程調整や営業電話は一切不要です。</p>
+            </div>
+
+            <div class="flow-grid">
+                <div class="flow-step">
+                    <div class="flow-no">STEP 01</div>
+                    <div class="flow-title">お申込み・決済</div>
+                    <div class="flow-desc">専用リンクよりStripe安全決済を完了（定価98,000円税込・買い切り）。</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-no">STEP 02</div>
+                    <div class="flow-title">専用フォーム入力</div>
+                    <div class="flow-desc">対象URL（または下書きテキスト）とターゲット層を送信（所要時間約10分）。</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-no">STEP 03</div>
+                    <div class="flow-title">72時間 外科手術</div>
+                    <div class="flow-desc">受領後、即座に執筆・構造設計に着手。72時間以内に全成果物をまとめ上げます。</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-no">STEP 04</div>
+                    <div class="flow-title">一括納品・質疑応答</div>
+                    <div class="flow-desc">設計図一式を納品。14日間チャット（Chatwork/Slack）で微調整に対応します。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Card Section -->
+    <section class="pricing-section" id="orderSection">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-tag">Pricing Plan</div>
+                <h2 class="section-title">緊急止血枠 集中改善パッケージ</h2>
+                <p class="section-desc">追加費用・月額縛りは一切ありません。着手から72時間以内に全設計図を納品します。</p>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-badge">月間先着 3枠限定</div>
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--navy-dark); margin-top: 10px;">ファネル・セールス構造「緊急外科手術」パック</h3>
+                <div class="pricing-price">98,000<span style="font-size: 1.5rem; font-weight: 700;"> 円</span></div>
+                <div class="pricing-tax">（税込 / 買い切りスポット契約）</div>
+
+                <ul class="pricing-features">
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>ファネル構造 摩擦診断カルテ（PDF/マークダウン）</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>FV離脱防止・成約構造ワイヤーフレーム ＆ 修正コピー</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>オファー摩擦除去・マイクロコピー設計書</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>初速ステップ・追客設計原稿（任意付帯）</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>完全非同期・着手から72時間完了納品</li>
+                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>納品後14日間のテキスト質疑応答サポート</li>
+                </ul>
+
+                <a href="https://tally.so" target="_blank" class="btn-main" style="width: 100%; font-size: 1.15rem; padding: 18px 24px;">
+                    今すぐ緊急止血枠を申し込む（専用フォームへ）
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 14px;">※決済はStripe安全決済または銀行振込に対応しています。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">Funnel Architect Advisory</div>
+        <div class="footer-meta">代表・事業参謀：香月 隆之（Kazuki Takayuki）</div>
+        <p>&copy; 2026 Funnel Architect Advisory. All rights reserved.</p>
+    </footer>
+</body>
+</html>
